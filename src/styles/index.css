@@ -15,6 +15,51 @@ html {
   box-sizing: border-box;
 }
 
+.mobile-portrait-app {
+  display: none;
+}
+
+.device-restriction {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  background: #26080d;
+  color: #f6ecd9;
+  text-align: center;
+}
+
+.device-restriction-content {
+  max-width: 24rem;
+}
+
+.device-restriction-content > span {
+  display: block;
+  color: #c9a24b;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.device-restriction-content h1 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.5rem;
+}
+
+.device-restriction-content p {
+  margin: 0;
+  color: #e3b7a0;
+}
+
+@media (max-width: 767px) and (orientation: portrait) and (pointer: coarse) {
+  .mobile-portrait-app {
+    display: block;
+  }
+
+  .device-restriction {
+    display: none;
+  }
+}
+
 body {
   @apply bg-maroon-deep text-ivory font-body;
   overflow-x: clip;

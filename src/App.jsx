@@ -52,40 +52,49 @@ export default function App() {
 
   return (
     <>
-      <AmbientLayer layerRef={ambientLayerRef} />
-      <ConfettiLayer layerRef={confettiLayerRef} />
+      <div className="device-restriction" role="status">
+        <div className="device-restriction-content">
+          <span aria-hidden="true">↻</span>
+          <h1>Please open this invitation on your phone</h1>
+          <p>View it in portrait orientation.</p>
+        </div>
+      </div>
+      <div className="mobile-portrait-app">
+        <AmbientLayer layerRef={ambientLayerRef} />
+        <ConfettiLayer layerRef={confettiLayerRef} />
 
-      {!entered && (
-        <EntryGate
-          onEnter={() => setEntered(true)}
-          onMusicStart={() => setMusicStartSignal((count) => count + 1)}
-          petalBurst={burstAmbient}
-        />
-      )}
+        {!entered && (
+          <EntryGate
+            onEnter={() => setEntered(true)}
+            onMusicStart={() => setMusicStartSignal((count) => count + 1)}
+            petalBurst={burstAmbient}
+          />
+        )}
 
-      <div style={{ opacity: entered ? 1 : 0, transition: 'opacity 1s ease' }}>
-        {entered && <FloatingNav />}
-        <main className="overflow-x-hidden overflow-y-hidden">
-          <Hero />
-          <ScratchSurprise onCelebrate={celebrateWithConfetti} />
-          <Couple />
-          {/* <StoryTimeline /> */}
-          <Events />
-          {/* <Countdown /> */}
-          <Gallery />
-          {/* <PhotoCarousel /> */}
-          {/* <Family /> */}
-          <Venue />
-          {/* <RSVP onCelebrate={burstAmbient} /> */}
-          <Contact />
-          {/* <MemoryWall /> */}
-          {/* <EasterEggs onCelebrate={celebrateWithConfetti} /> */}
-        </main>
-        <footer className="text-center py-16 px-5 text-rose text-[13px] tracking-wide">
-          <span className="font-devanagari text-xl block mb-2.5 text-gold-bright">Thank you</span>
-          With love, {config.bride.name} &amp; {config.groom.name} - see you at the celebration.
-        </footer>
-        <MusicPlayer startSignal={musicStartSignal} visible={entered} />
+        <div style={{ opacity: entered ? 1 : 0, transition: 'opacity 1s ease' }}>
+          {entered && <FloatingNav />}
+          <main className="overflow-x-hidden overflow-y-hidden">
+            <Hero />
+            <ScratchSurprise onCelebrate={celebrateWithConfetti} />
+            <Couple />
+            {/* <StoryTimeline /> */}
+            <Events />
+            {/* <Countdown /> */}
+            <Gallery />
+            {/* <PhotoCarousel /> */}
+            {/* <Family /> */}
+            <Venue />
+            {/* <RSVP onCelebrate={burstAmbient} /> */}
+            <Contact />
+            {/* <MemoryWall /> */}
+            {/* <EasterEggs onCelebrate={celebrateWithConfetti} /> */}
+          </main>
+          <footer className="text-center py-16 px-5 text-rose text-[13px] tracking-wide">
+            <span className="font-devanagari text-xl block mb-2.5 text-gold-bright">Thank you</span>
+            With love, {config.bride.name} &amp; {config.groom.name} - see you at the celebration.
+          </footer>
+          <MusicPlayer startSignal={musicStartSignal} visible={entered} />
+        </div>
       </div>
     </>
   );

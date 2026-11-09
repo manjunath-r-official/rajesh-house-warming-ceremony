@@ -172,9 +172,9 @@ export default function ScratchSurprise({ onCelebrate }) {
           }
         >
           <div className="px-6 py-8 text-center min-h-[220px] flex flex-col items-center justify-center" style={{ background: 'transparent' }}>
-            <span className="text-2xl mb-2" style={{ color: config.theme.colors.maroonDeep }}>💍</span>
+            <span className="text-2xl mb-2" style={{ color: config.theme.colors.maroonDeep }}>🏡</span>
             {/* <h4 className="font-display text-2xl mb-1 leading-snug" style={{ color: config.theme.colors.maroonDeep }}>{dateStr}</h4> */}
-            <h4 className="font-display text-2xl mb-1 leading-snug" style={{ color: config.theme.colors.maroonDeep }}>20th, 21st September, 2026</h4>
+            <h4 className="font-display text-2xl mb-1 leading-snug" style={{ color: config.theme.colors.maroonDeep }}>22nd November, 2026</h4>
             <p className="text-[13px] mx-6" style={{ color: config.theme.colors.maroon }}>{config.scratchSurprise.subtitle}</p>
           </div>
           {!revealed && (

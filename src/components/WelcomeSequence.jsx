@@ -154,7 +154,7 @@ export default function WelcomeSequence({ visible, onEnter }) {
         className="relative z-10 mt-2 text-ivory text-[13px] uppercase tracking-[0.2em]"
         style={{ animation: 'welcomeFloat 3.6s ease-in-out infinite 0.25s' }}
       >
-        Welcome to our wedding
+        Welcome to our New Home
       </div>
 
       <button

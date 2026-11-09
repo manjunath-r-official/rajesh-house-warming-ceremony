@@ -1,11 +1,12 @@
 import config from '../config/config.js';
-import heroSmall from '../assets/images/hero_small.png';
+import heroSmall from '../assets/images/hero_bg.png';
 import heroBig from '../assets/images/hero_big.png';
-import coupleImg from '../assets/images/couple/coupleForheroSection.png';
 
 export default function Hero() {
-  const groom = config.groom?.name || 'Groom';
-  const bride = config.bride?.name || 'Bride';
+  const heroSection = config.heroSection || {};
+  const subtitlePosition = heroSection.subtitlePosition || {};
+  const bottomText = heroSection.bottomText;
+  const bottomTextPosition = bottomText?.position || {};
 
   return (
     <section id="hero" className="relative">
@@ -23,12 +24,13 @@ export default function Hero() {
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
         .hero-bg {
+          position: relative;
           min-height: 100vh;
           display: flex;
           align-items: flex-start;
           justify-content: center;
           padding-top: 12vh; /* place title ~20% from top */
-          background-image: url('${coupleImg}');
+          background-image: url('${heroSmall}');
           background-size: cover;
           background-position: center center;
           background-repeat: no-repeat;
@@ -41,8 +43,9 @@ export default function Hero() {
         }
 
         .hero-overlay {
-          width: 36%;
-          max-width: 640px;
+          width: 100%;
+          max-width: 100%;
+          box-sizing: border-box;
           padding: 0rem 1.25rem;
           display: flex;
           align-items: center;
@@ -53,7 +56,7 @@ export default function Hero() {
         }
 
         @media (max-width: 640px) {
-          .hero-overlay { width: 65%; margin-bottom: 2rem; }
+          .hero-overlay { width: 100%; margin-bottom: 2rem; }
         }
 
         .hero-intro {
@@ -72,22 +75,75 @@ export default function Hero() {
 
         .hero-title {
           font-family: 'Great Vibes', ${config.theme.fonts.cinzel}, ${config.theme.fonts.display}, cursive;
-          color: ${config.theme.colors.brown};
-          font-size: clamp(40px, 12vw, 96px);
-          line-height: 0.9;
+          background-image: linear-gradient(to bottom, ${heroSection.titleGradientTop || config.theme.colors.gold}, ${heroSection.titleGradientBottom || config.theme.colors.maroon});
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-size: ${heroSection.titleFontSize || 'clamp(40px, 12vw, 96px)'};
+          line-height: 1.5;
           text-align: center;
-          letter-spacing: -0.02em;
+          letter-spacing: 0;
+          white-space: nowrap;
+          padding-inline: 0.2em;
+          margin-inline: -0.2em;
           text-shadow: 0 8px 28px rgba(0,0,0,0.45);
+        }
+
+        .hero-subtitle {
+          position: relative;
+          color: ${config.theme.colors.brown};
+          font-family: ${config.theme.fonts.display}, serif;
+          text-align: center;
         }
       `}</style>
 
       <div className="hero-bg">
         <div className="hero-overlay">
           <div>
-            <p className="hero-intro">Together with our families, we solicite your gracious presence and blessings on the auspicious occasion of the wedding celebration of</p>
-            <h1 className="hero-title">{groom} <span style={{ display: 'block', fontSize: '0.45em', opacity: 0.9 }}>and</span> {bride}</h1>
+            <p className="hero-intro">{heroSection.intro || 'You are Cordially Invited to our'}</p>
+            <h1 className="hero-title">{heroSection.title || 'Gruha Pravesha'}</h1>
+            {heroSection.subtitle && (
+              <p
+                className="hero-subtitle"
+                style={{
+                  top: subtitlePosition.top ?? '0px',
+                  right: subtitlePosition.right ?? 'auto',
+                  bottom: subtitlePosition.bottom ?? 'auto',
+                  left: subtitlePosition.left ?? '0px',
+                }}
+              >
+                {heroSection.subtitle}
+              </p>
+            )}
           </div>
         </div>
+        {bottomText?.text && (
+          <p
+            className="hero-bottom-text"
+            style={{
+              position: 'absolute',
+              top: bottomTextPosition.top ?? 'auto',
+              right: bottomTextPosition.right ?? '0',
+              bottom: bottomTextPosition.bottom ?? '20%',
+              left: bottomTextPosition.left ?? '0',
+              margin: 0,
+              padding: '0 1rem',
+              boxSizing: 'border-box',
+              color: bottomText.color || config.theme.colors.maroonDeep,
+              backgroundImage: `linear-gradient(to bottom, ${heroSection.titleGradientTop || config.theme.colors.gold}, ${heroSection.titleGradientBottom || config.theme.colors.maroon})`,
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              fontSize: bottomText.fontSize || '1rem',
+              fontFamily: bottomText.fontFamily || config.theme.fonts.devanagari,
+              fontWeight: bottomText.fontWeight || 700,
+              textAlign: bottomText.textAlign || 'center',
+              zIndex: 30,
+            }}
+          >
+            {bottomText.text}
+          </p>
+        )}
       </div>
     </section>
   );

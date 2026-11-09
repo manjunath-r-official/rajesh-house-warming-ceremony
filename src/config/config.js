@@ -76,6 +76,34 @@ const config = {
       '',
   },
   heroPhoto: img1,
+  heroSection: {
+    intro: 'You are Cordially Invited to our',
+    title: 'Gruha Pravesha',
+    titleFontSize: 'clamp(40px, 12vw, 96px)',
+    titleGradientTop: '#FFC107',
+    titleGradientBottom: '#ba3104',
+    subtitle: 'House Warming Ceremony',
+    subtitlePosition: {
+      top: '0px',
+      right: 'auto',
+      bottom: 'auto',
+      left: '0px',
+    },
+    bottomText: {
+      text: 'A New Home, A New Beginning',
+      color: '#26080D',
+      fontSize: '1rem',
+      fontWeight: 700,
+      fontFamily: '"display", serif, cursive',
+      textAlign: 'center',
+      position: {
+        top: 'auto',
+        right: '0',
+        bottom: '20%',
+        left: '0',
+      },
+    },
+  },
 
   quote: {
     text: 'Two souls, one heart, one destiny woven in gold thread and temple bells.',
@@ -92,7 +120,7 @@ const config = {
   },
 
   // ------------------------------------------------------------- DATES
-  weddingDate: '2026-09-21T10:00:00',
+  weddingDate: '2026-11-22T10:00:00',
   receptionDate: '2026-09-20T19:00:00',
 
   // ------------------------------------------------------------- VENUE
@@ -390,7 +418,7 @@ const config = {
   // duplicate the date here. `subtitle` is the line shown under the date
   // once revealed; customize freely.
   scratchSurprise: {
-    subtitle: "Join us as we begin our forever, surrounded by the ones we love.",
+    subtitle: "Our new house becomes a true home only when filled with your blessings and love.",
     // Optional background image for the scratch card area. Point at a
     // file inside `src/assets/images/`, e.g. '/src/assets/images/props/scratch-bg.png'
     // Leave empty string to use the default solid color background.
