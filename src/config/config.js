@@ -61,7 +61,7 @@ const config = {
   seo: {
     siteTitle: 'House warming ceremony — Invitation',
     description: 'Join us to celebrate our house warming ceremony on November 22, 2026.',
-    url: 'https://sushmavinay.wedding',
+    url: 'https://gruha-pravesha-eta.vercel.app',
     ogImage: '/cover.jpg',
   },
 
@@ -87,8 +87,8 @@ const config = {
     intro: 'You are Cordially Invited to our',
     title: 'Gruha Pravesha',
     titleFontSize: 'clamp(40px, 12vw, 96px)',
-    titleGradientTop: '#FFC107',
-    titleGradientBottom: '#ba3104',
+    titleGradientTop: 'rgb(1, 52, 1)',
+    titleGradientBottom: '#0f5c4a',
     subtitle: 'House Warming Ceremony',
     subtitlePosition: {
       top: '0px',
@@ -101,7 +101,7 @@ const config = {
       color: '#26080D',
       fontSize: '1rem',
       fontWeight: 700,
-      fontFamily: '"display", serif, cursive',
+      fontFamily: '"Cormorant Garamond", serif',
       textAlign: 'center',
       position: {
         top: 'auto',
@@ -195,8 +195,8 @@ const config = {
   },
 
   // ------------------------------------------------------------- DATES
-  weddingDate: '2026-11-22T10:00:00',
-  receptionDate: '2026-11-22T19:00:00',
+  weddingDate: '2026-11-22T05:00:00',
+  receptionDate: '2026-11-22T05:00:00',
 
   // ------------------------------------------------------------- VENUE
   venue: {
@@ -221,7 +221,7 @@ const config = {
     height: 'auto',
     minHeight: '700px',
     aspectRatio: '768 / 1365',
-    contentPosition: { top: '10%', right: '7%', bottom: 'auto', left: '7%' },
+    contentPosition: { top: '15%', right: '7%', bottom: 'auto', left: '7%' },
     contentMaxWidth: '520px',
     contentGap: '0.85rem',
     heading: {
@@ -241,9 +241,9 @@ const config = {
       text: '',
       details: '',
       color: '#FFFFFF',
-      fontFamily: '"Mukta", sans-serif',
-      fontSize: '1rem',
-      fontWeight: 500,
+      fontFamily: 'display, sans-serif',
+      fontSize: '0.9rem',
+      fontWeight: 400,
       lineHeight: 1.5,
       textAlign: 'center',
     },
@@ -276,9 +276,9 @@ const config = {
   // ---------------------------------------------------------- CONTACTS
   contacts: {
     //groomPhone: '+91',
-    //bridePhone: '+917483147151',
-    parentsPhone: '+917483147151',
-    whatsapp: '917483147151',
+    //bridePhone: '+919886678539',
+    parentsPhone: '+919886678539',
+    whatsapp: '919886678539',
     //email: 'hello@sushmavinay.wedding',
   },
   contactsSection: {
@@ -408,7 +408,7 @@ const config = {
       icon: '🌼',
       date: 'Nov 22, 2026',
       time: '5:00 AM',
-      venue: 'Akshaya layout, Bangalore',
+      // venue: 'Akshaya layout, Bangalore',
       // dressCode: 'Yellow Attire',
       description: 'A sacred beginning filled with divine blessings and prosperity.',
       backgroundImage: haldiImg, // optional per-card override
@@ -418,7 +418,7 @@ const config = {
       icon: '🌿',
       date: 'Nov 22, 2026',
       time: '11:00 AM',
-      venue: 'Akshaya layout, Bangalore',
+      // venue: 'Akshaya layout, Bangalore',
       // dressCode: 'Green & Gold',
       description: 'A festive feast of tradition, togetherness, and love.',
       backgroundImage: mehandiImg,

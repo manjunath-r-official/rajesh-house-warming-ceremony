@@ -1,5 +1,6 @@
 import config from '../config/config.js';
-import heroSmall from '../assets/images/hero_bg.png';
+// import heroSmall from '../assets/images/hero_bg3.png';
+import heroSmall from '../assets/images/hero_bg5.webp';
 import heroBig from '../assets/images/hero_big.png';
 
 export default function Hero() {
