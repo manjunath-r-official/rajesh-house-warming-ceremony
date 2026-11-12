@@ -36,8 +36,8 @@ export default function Events() {
       <div className="relative section max-w-[1120px] mx-auto px-5 py-28">
         <Reveal className="text-center">
           <span className="inline-block tracking-[0.28em] uppercase text-xs text-gold-bright mb-3">Celebrations</span>
-          <h2 className="font-display font-medium text-ivory" style={{ fontSize: 'clamp(34px,6vw,58px)' }}>Wedding Events</h2>
-          <p className="text-rose italic max-w-md mx-auto mt-2 mb-16">Three days of colour, music, and joy.</p>
+          <h2 className="font-display font-medium text-ivory" style={{ fontSize: 'clamp(34px,6vw,58px)' }}>House Warming Events</h2>
+          <p className="text-rose italic max-w-md mx-auto mt-2 mb-16">A day of prayers, blessings, and new beginnings.</p>
         </Reveal>
 
         <div className="flex flex-col gap-10">

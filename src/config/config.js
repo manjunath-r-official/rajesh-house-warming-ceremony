@@ -48,28 +48,33 @@ import coupleBg from '../assets/images/props/bg2.png';
 import welcomeBg from '../assets/images/props/welcomebg.png';
 import godImg from '../assets/images/props/god.png';
 import scratchBg from '../assets/images/props/scratchbg.png';
+import section2Bg from '../assets/images/props/green_section.png';
+import venue2Bg from '../assets/images/Venue_bg.png';
 
 const config = {
+  // Set true to allow the invitation on tablets, desktops, and landscape screens.
+  allowLargeDisplays: true,
+
   // ---------------------------------------------------------------- SEO
   seo: {
-    siteTitle: 'Sushma & Vinay — Wedding Invitation',
-    description: 'Join Sushma & Vinay as they begin their forever. December 2026, New Delhi.',
+    siteTitle: 'House warming ceremony — Invitation',
+    description: 'Join us to celebrate our house warming ceremony on November 22, 2026.',
     url: 'https://sushmavinay.wedding',
     ogImage: '/cover.jpg',
   },
 
   // ------------------------------------------------------------- COUPLE
   bride: {
-    name: 'Sushma',
-    fullName: 'Sushma.L.P',
+    name: 'House warming ceremony',
+    fullName: 'House warming ceremony',
     parents: 'Sri B.A. Prakash & Smt. Late Latha',
     photo: bridePic,
     story:
       '',
   },
   groom: {
-    name: 'Vinay',
-    fullName: 'Vinay.R',
+    name: 'House warming ceremony',
+    fullName: 'House warming ceremony',
     parents: 'Late Sri Rudra Aradhya & Smt. Manjula',
     photo: groomPic,
     story:
@@ -104,10 +109,78 @@ const config = {
       },
     },
   },
+  section2: {
+    enabled: true,
+    backgroundImage: section2Bg,
+    backgroundSize: '100% 100%',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundColor: '#F6ECD9',
+    height: '100svh',
+    minHeight: '600px',
+    contentPosition: { top: '25%', right: '8%', bottom: 'auto', left: '8%' },
+    contentGap: '1rem',
+    heading: {
+      text: 'Invitation',
+      color: '#26080D',
+      fontFamily: '"Cormorant Garamond", serif',
+      fontSize: '2rem',
+      fontWeight: 700,
+      lineHeight: 1.2,
+      textAlign: 'center',
+    },
+    introParagraph: {
+      text: 'With the divine blessings of our Almighty and elders,',
+      color: '#3B0D14',
+      fontFamily: '"Mukta", sans-serif',
+      fontSize: '1rem',
+      fontWeight: 400,
+      lineHeight: 1.6,
+      textAlign: 'center',
+    },
+    subheading: {
+      text: 'Smt. Lalitha & Shri Hanumantha',
+      color: '#26080D',
+      fontFamily: '"Cormorant Garamond", serif',
+      fontSize: '1.25rem',
+      fontWeight: 900,
+      lineHeight: 1.2,
+      textAlign: 'center',
+    },
+    paragraph: {
+      text: 'we cordially invite you and your family to grace the occasion of our House Warming Ceremony and bless us as we step into our new home.',
+      color: '#3B0D14',
+      fontFamily: '"Mukta", sans-serif',
+      fontSize: '1rem',
+      fontWeight: 400,
+      lineHeight: 1.6,
+      textAlign: 'center',
+    },
+    dateTime: {
+      enabled: true,
+      heading: 'With Compliments from Kutties:',
+      date: 'Dikshan kumar &',
+      time: 'Lavin Kumar',
+      headingColor: '#26080D',
+      color: '#3B0D14',
+      iconColor: '#26080D',
+      headingFontFamily: '"Cormorant Garamond", serif',
+      fontFamily: '"Mukta", sans-serif',
+      headingFontSize: '1.25rem',
+      fontSize: '1rem',
+      headingFontWeight: 700,
+      fontWeight: 500,
+      iconSize: 18,
+      iconTextGap: '0.5rem',
+      rowGap: '0.5rem',
+      textAlign: 'center',
+      alignItems: 'center',
+    },
+  },
 
   quote: {
     text: 'Two souls, one heart, one destiny woven in gold thread and temple bells.',
-    by: 'Sushma & Vinay',
+    by: 'House warming ceremony',
   },
 
   welcome: {
@@ -121,20 +194,81 @@ const config = {
 
   // ------------------------------------------------------------- DATES
   weddingDate: '2026-11-22T10:00:00',
-  receptionDate: '2026-09-20T19:00:00',
+  receptionDate: '2026-11-22T19:00:00',
 
   // ------------------------------------------------------------- VENUE
   venue: {
     name: 'The Venue',
-    address: 'PRAKRUTHI VILASA',
-    mapsLink: 'https://maps.app.goo.gl/fNTzFE3DBAceXFWH9',
+    address: '',
+    mapsLink: 'https://maps.app.goo.gl/WmnSSgpmcJteWaDx8',
     mapsEmbed:
-      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.162777287996!2d77.7175536750741!3d12.832755887470016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6d15b3be0553%3A0xbaa6da78b605a0d4!2sPRAKRUTHI%20VILASA!5e0!3m2!1sen!2sin!4v1787860400033!5m2!1sen!2sin',
-    parkingInfo: 'Singena Agrahara Gate, Dommasandra Road, Near Chowdeshwary Nursery, Bengaluru, Karnataka — 560099',
+      'https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3889.551919338341!2d77.66564227507509!3d12.87219198743416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTLCsDUyJzE5LjkiTiA3N8KwNDAnMDUuNiJF!5e0!3m2!1sen!2sin!4v1794307022411!5m2!1sen!2sin',
+    parkingInfo: '4th cross road, Akshaya Layout, Naganathapura, Rayasandra, Bengaluru, Karnataka - 560100',
     hotelsNearby: [
       { name: 'The Oberoi, New Delhi', distance: '2.1 km' },
       { name: 'Taj Mahal Hotel', distance: '3.4 km' },
     ],
+  },
+  venue2: {
+    enabled: true,
+    backgroundImage: venue2Bg,
+    backgroundSize: '100% 100%',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundColor: '#07320A',
+    height: 'auto',
+    minHeight: '700px',
+    aspectRatio: '768 / 1365',
+    contentPosition: { top: '10%', right: '7%', bottom: 'auto', left: '7%' },
+    contentMaxWidth: '520px',
+    contentGap: '0.85rem',
+    heading: {
+      text: 'Venue',
+      // fontFamily: '"Great Vibes", cursive',
+      //fontFamily: '"Great Vibes", cursive',
+      fontSize: '2rem',
+      // fontSize: 'clamp(3rem, 10vw, 2.5rem)',
+      fontWeight: 400,
+      gradientTop: '#FFF4B0',
+      gradientMiddle: '#F6C343',
+      gradientBottom: '#B87508',
+      textAlign: 'center',
+      lineHeight: 1.05,
+    },
+    address: {
+      text: '',
+      details: '',
+      color: '#FFFFFF',
+      fontFamily: '"Mukta", sans-serif',
+      fontSize: '1rem',
+      fontWeight: 500,
+      lineHeight: 1.5,
+      textAlign: 'center',
+    },
+    button: {
+      text: 'View Location on Map',
+      textColor: '#14532D',
+      fontFamily: '"Mukta", sans-serif',
+      fontSize: '0.95rem',
+      fontWeight: 700,
+      gradientStart: '#B87508',
+      gradientMiddle: '#FFE58A',
+      gradientEnd: '#D99A16',
+      highlightColor: 'rgba(255,255,255,0.82)',
+      borderColor: '#FFE58A',
+      borderRadius: '999px',
+      padding: '0.9rem 1.4rem',
+      shineDuration: '2.8s',
+      iconSize: 20,
+      iconTextGap: '0.65rem',
+    },
+    map: {
+      embedUrl: '',
+      height: '180px',
+      borderRadius: '12px',
+      borderColor: 'rgba(255, 215, 95, 0.8)',
+      show: true,
+    },
   },
 
   // ---------------------------------------------------------- CONTACTS
@@ -159,8 +293,8 @@ const config = {
       overlay: 'rgba(10,3,5,0.15)', // background overlay opacity
     },
     items: [
-      //{ source: 'contacts.groomPhone', label: 'Call Vinay', icon: 'phone' },
-      // { source: 'contacts.bridePhone', label: 'Call Sushma', icon: 'phone' },
+      //{ source: 'contacts.groomPhone', label: 'Call us', icon: 'phone' },
+      // { source: 'contacts.bridePhone', label: 'Call us', icon: 'phone' },
       { source: 'contacts.parentsPhone', label: 'Contact us', icon: 'phone' },
       { source: 'contacts.whatsapp', label: 'WhatsApp', icon: 'whatsapp' },
       { source: 'contacts.email', label: 'Instagram', icon: 'instagram' },
@@ -245,7 +379,7 @@ const config = {
     {
       name: 'Haldi',
       icon: '🌼',
-      date: 'Sept 18, 2026',
+      date: 'November 22, 2026',
       time: '10:00 AM',
       venue: 'Aradhya Nilaya, Bangalore',
       // dressCode: 'Yellow Attire',
@@ -255,7 +389,7 @@ const config = {
     {
       name: 'Mehendi',
       icon: '🌿',
-      date: 'Sept 18, 2026',
+      date: 'November 22, 2026',
       time: '05:00 PM',
       venue: 'Aradhya Nilaya, Bangalore',
       // dressCode: 'Green & Gold',
@@ -265,7 +399,7 @@ const config = {
     // {
     //   name: 'Sangeet',
     //   icon: '🎶',
-    //   date: 'Dec 11, 2026',
+    //   date: 'November 22, 2026',
     //   time: '7:00 PM',
     //   venue: 'The Leela Palace Lawns',
     //   dressCode: 'Festive Indo-Western',
@@ -275,7 +409,7 @@ const config = {
     {
       name: 'Reception',
       icon: '🥂',
-      date: 'Sept 20, 2026',
+      date: 'November 22, 2026',
       time: '7:00 PM',
       venue: 'Prakruthi Vilasa, Bangalore',
       // dressCode: 'Formal / Black Tie',
@@ -285,7 +419,7 @@ const config = {
     {
       name: 'Wedding',
       icon: '💍',
-      date: 'Sept 21, 2026',
+      date: 'November 22, 2026',
       time: '10:00 AM',
       venue: 'Prakruthi Vilasa, Bangalore',
       // dressCode: 'Traditional Indian',
@@ -418,7 +552,8 @@ const config = {
   // duplicate the date here. `subtitle` is the line shown under the date
   // once revealed; customize freely.
   scratchSurprise: {
-    subtitle: "Our new house becomes a true home only when filled with your blessings and love.",
+    //subtitle: "Our new house becomes a true home only when filled with your blessings and love.",
+    subtitle: "From 9:00 AM Onwards",
     // Optional background image for the scratch card area. Point at a
     // file inside `src/assets/images/`, e.g. '/src/assets/images/props/scratch-bg.png'
     // Leave empty string to use the default solid color background.

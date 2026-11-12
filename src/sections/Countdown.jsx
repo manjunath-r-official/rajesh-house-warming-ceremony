@@ -35,7 +35,7 @@ export default function Countdown() {
           <div className="text-center relative z-10">
             <span className="inline-block tracking-[0.28em] uppercase text-xs text-gold-bright mb-3">Almost There</span>
             <h2 className="font-display font-medium text-ivory mb-10" style={{ fontSize: 'clamp(34px,6vw,58px)' }}>
-              Counting Down To Forever
+              Counting Down for new beginnings
             </h2>
           </div>
 

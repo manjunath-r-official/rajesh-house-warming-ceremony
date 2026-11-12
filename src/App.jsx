@@ -7,12 +7,14 @@ import MusicPlayer from './components/MusicPlayer.jsx';
 import EntryGate from './layouts/EntryGate.jsx';
 
 import Hero from './sections/Hero.jsx';
+import Section2 from './sections/Section2.jsx';
 import ScratchSurprise from './sections/ScratchSurprise.jsx';
 import Couple from './sections/Couple.jsx';
 import StoryTimeline from './sections/StoryTimeline.jsx';
 import Events from './sections/Events.jsx';
 import Countdown from './sections/Countdown.jsx';
 import Gallery from './sections/Gallery.jsx';
+import Venue2 from './sections/Venue2.jsx';
 import PhotoCarousel from './sections/PhotoCarousel.jsx';
 import Family from './sections/Family.jsx';
 import Venue from './sections/Venue.jsx';
@@ -51,7 +53,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <div className={`app-viewport${config.allowLargeDisplays ? ' allow-large-displays' : ''}`}>
       <div className="device-restriction" role="status">
         <div className="device-restriction-content">
           <span aria-hidden="true">↻</span>
@@ -76,11 +78,13 @@ export default function App() {
           <main className="overflow-x-hidden overflow-y-hidden">
             <Hero />
             <ScratchSurprise onCelebrate={celebrateWithConfetti} />
-            <Couple />
+            <Section2 />
+            {/* <Couple /> */}
             {/* <StoryTimeline /> */}
             <Events />
             {/* <Countdown /> */}
-            <Gallery />
+            {/* <Gallery /> */}
+            <Venue2 />
             {/* <PhotoCarousel /> */}
             {/* <Family /> */}
             <Venue />
@@ -96,6 +100,6 @@ export default function App() {
           <MusicPlayer startSignal={musicStartSignal} visible={entered} />
         </div>
       </div>
-    </>
+    </div>
   );
 }

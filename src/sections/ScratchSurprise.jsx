@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FiCalendar, FiClock } from 'react-icons/fi';
 import Reveal from '../components/Reveal.jsx';
 import CountdownDigits from '../components/CountdownDigits.jsx';
 import config from '../config/config.js';
@@ -37,11 +38,14 @@ export default function ScratchSurprise({ onCelebrate }) {
 
       const gBright = config.theme.colors.maroonDeep || '#E8C874';
       const gDark = config.theme.colors.realGold || '#C9A24B';
+      // const gBright = '#0b0b0b';
+      // const gDark = config.theme.colors.realGold || '#C9A24B';
 
       // Base diagonal gold gradient across the canvas (aligned correctly)
       const grad = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
       grad.addColorStop(0, gBright);
       grad.addColorStop(0.48, '#fbbe23');
+      //grad.addColorStop(0.48, '#f6ce06');
       grad.addColorStop(0.99, gBright);
       //grad.addColorStop(0.8, '#fbbe23');
       //grad.addColorStop(0.9, gDark);
@@ -173,9 +177,14 @@ export default function ScratchSurprise({ onCelebrate }) {
         >
           <div className="px-6 py-8 text-center min-h-[220px] flex flex-col items-center justify-center" style={{ background: 'transparent' }}>
             <span className="text-2xl mb-2" style={{ color: config.theme.colors.maroonDeep }}>🏡</span>
-            {/* <h4 className="font-display text-2xl mb-1 leading-snug" style={{ color: config.theme.colors.maroonDeep }}>{dateStr}</h4> */}
+            <h4 className="font-display text-2xl mb-1 leading-snug" style={{ color: config.theme.colors.maroonDeep }}>Sunday</h4>
             <h4 className="font-display text-2xl mb-1 leading-snug" style={{ color: config.theme.colors.maroonDeep }}>22nd November, 2026</h4>
-            <p className="text-[13px] mx-6" style={{ color: config.theme.colors.maroon }}>{config.scratchSurprise.subtitle}</p>
+            {/* <FiClock size={18} color={config.theme.colors.maroonDeep} aria-hidden="true" />
+            <span className="text-[13px] mx-6" style={{ color: config.theme.colors.maroon }}>{config.scratchSurprise.subtitle}</span> */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <FiClock size={18} color={config.theme.colors.maroonDeep} aria-hidden="true" />
+            <span className="text-[13px]" style={{ color: config.theme.colors.maroon }}>{config.scratchSurprise.subtitle}</span>
+          </div>
           </div>
           {!revealed && (
             <canvas

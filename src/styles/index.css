@@ -19,6 +19,10 @@ html {
   display: none;
 }
 
+.allow-large-displays .mobile-portrait-app {
+  display: block;
+}
+
 .device-restriction {
   min-height: 100vh;
   display: grid;
@@ -27,6 +31,10 @@ html {
   background: #26080d;
   color: #f6ecd9;
   text-align: center;
+}
+
+.allow-large-displays .device-restriction {
+  display: none;
 }
 
 .device-restriction-content {

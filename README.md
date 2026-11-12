@@ -1,4 +1,4 @@
-# Sushma & Vinay — Royal Wedding Invitation
+# House warming ceremony — Invitation
 
 An ultra-premium, cinematic digital wedding invitation built with React,
 GSAP, Framer Motion, and Lenis smooth scroll.
