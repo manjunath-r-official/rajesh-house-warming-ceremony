@@ -1,7 +1,8 @@
 import { FiPhone, FiMessageCircle, FiMapPin, FiMail } from 'react-icons/fi';
 import Reveal from '../components/Reveal.jsx';
 import config from '../config/config.js';
-import contactBg from '../assets/images/props/bg2.png';
+//import contactBg from '../assets/images/props/bg2.png';
+import contactBg from '../assets/images/event_bgr.png';
 
 function resolvePath(obj, path) {
   return path.split('.').reduce((acc, p) => (acc && acc[p] !== undefined ? acc[p] : undefined), obj);

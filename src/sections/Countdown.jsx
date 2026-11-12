@@ -2,8 +2,11 @@ import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import Reveal from '../components/Reveal.jsx';
 import CountdownDigits from '../components/CountdownDigits.jsx';
+import config from '../config/config.js';
 
 export default function Countdown() {
+  const section = config.countdownSection || {};
+  const transparentBackground = section.transparentBackground === true;
   const fireflies = useMemo(
     () =>
       Array.from({ length: 14 }).map((_, i) => ({
@@ -16,11 +19,24 @@ export default function Countdown() {
   );
 
   return (
-    <section id="countdown" className="section max-w-[1120px] mx-auto px-5 py-5">
+    <section
+      id="countdown"
+      className="w-full"
+      style={{
+        backgroundColor: transparentBackground ? 'transparent' : section.backgroundColor || config.theme.colors.maroonDeep,
+        backgroundImage: !transparentBackground && section.showBackgroundImage !== false && section.backgroundImage
+          ? `url(${section.backgroundImage})`
+          : 'none',
+        backgroundSize: section.backgroundSize || 'cover',
+        backgroundPosition: section.backgroundPosition || 'center',
+        backgroundRepeat: section.backgroundRepeat || 'no-repeat',
+      }}
+    >
+      <div className="section max-w-[1120px] mx-auto px-5 py-5">
       <Reveal>
         <div
           className="rounded-3xl px-5 py-5 relative overflow-hidden"
-          style={{ background: 'radial-gradient(ellipse at top, rgba(201,162,75,.14), transparent 70%)' }}
+          style={{ background: transparentBackground ? 'transparent' : section.panelBackground || 'radial-gradient(ellipse at top, rgba(201,162,75,.14), transparent 70%)' }}
         >
           {fireflies.map((f) => (
             <motion.div
@@ -44,6 +60,7 @@ export default function Countdown() {
           </div>
         </div>
       </Reveal>
+      </div>
     </section>
   );
 }

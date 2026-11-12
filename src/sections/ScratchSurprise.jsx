@@ -14,6 +14,9 @@ import Countdown from './Countdown.jsx';
  * the same live ticking countdown used further down the page.
  */
 export default function ScratchSurprise({ onCelebrate }) {
+  const scratchConfig = config.scratchSurprise || {};
+  const scratchSection = scratchConfig.sectionBackground || {};
+  const scratchCard = scratchConfig.cardBackground || {};
   const canvasRef = useRef(null);
   const wrapperRef = useRef(null);
   const [revealed, setRevealed] = useState(false);
@@ -154,7 +157,20 @@ export default function ScratchSurprise({ onCelebrate }) {
   }, []);
 
   return (
-    <section id="surprise" className="section max-w-[1120px] mx-auto px-2 py-28">
+    <section
+      id="surprise"
+      className="w-full"
+      style={{
+        backgroundColor: scratchSection.backgroundColor || config.theme.colors.maroonDeep,
+        backgroundImage: scratchSection.showBackgroundImage !== false && scratchSection.backgroundImage
+          ? `url(${scratchSection.backgroundImage})`
+          : 'none',
+        backgroundSize: scratchSection.backgroundSize || 'cover',
+        backgroundPosition: scratchSection.backgroundPosition || 'center',
+        backgroundRepeat: scratchSection.backgroundRepeat || 'no-repeat',
+      }}
+    >
+      <div className="section max-w-[1120px] mx-auto px-2 py-28">
       <Reveal className="text-center">
         <span className="inline-block tracking-[0.28em] uppercase text-xs text-gold-bright mb-3">Shhh...</span>
         <h2 className="font-display font-medium text-ivory" style={{ fontSize: 'clamp(34px,6vw,58px)' }}>Save The Date</h2>
@@ -166,13 +182,14 @@ export default function ScratchSurprise({ onCelebrate }) {
           ref={wrapperRef}
           className="relative max-w-[460px] mx-auto rounded-2xl overflow-hidden shadow-royal"
           style={
-            config.scratchSurprise && config.scratchSurprise.backgroundImage
+            scratchCard.showBackgroundImage !== false && scratchCard.backgroundImage
               ? {
-                  backgroundImage: `url(${config.scratchSurprise.backgroundImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
+                  backgroundImage: `url(${scratchCard.backgroundImage})`,
+                  backgroundSize: scratchCard.backgroundSize || 'cover',
+                  backgroundPosition: scratchCard.backgroundPosition || 'center',
+                  backgroundRepeat: scratchCard.backgroundRepeat || 'no-repeat',
                 }
-              : { background: config.theme.colors.ivory }
+              : { background: scratchCard.backgroundColor || config.theme.colors.ivory }
           }
         >
           <div className="px-6 py-8 text-center min-h-[220px] flex flex-col items-center justify-center" style={{ background: 'transparent' }}>
@@ -183,7 +200,7 @@ export default function ScratchSurprise({ onCelebrate }) {
             <span className="text-[13px] mx-6" style={{ color: config.theme.colors.maroon }}>{config.scratchSurprise.subtitle}</span> */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <FiClock size={18} color={config.theme.colors.maroonDeep} aria-hidden="true" />
-            <span className="text-[13px]" style={{ color: config.theme.colors.maroon }}>{config.scratchSurprise.subtitle}</span>
+            <span className="text-[13px]" style={{ color: config.theme.colors.maroon }}>{scratchConfig.subtitle}</span>
           </div>
           </div>
           {!revealed && (
@@ -219,6 +236,7 @@ export default function ScratchSurprise({ onCelebrate }) {
           <Countdown />
         )}
       </AnimatePresence>
+      </div>
     </section>
   );
 }

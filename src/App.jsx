@@ -87,7 +87,7 @@ export default function App() {
             <Venue2 />
             {/* <PhotoCarousel /> */}
             {/* <Family /> */}
-            <Venue />
+            {/* <Venue /> */}
             {/* <RSVP onCelebrate={burstAmbient} /> */}
             <Contact />
             {/* <MemoryWall /> */}

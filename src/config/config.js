@@ -30,8 +30,8 @@ import img18 from '../assets/images/couple/18.jpg';
 import groomPic from '../assets/images/couple/groom.png';
 import bridePic from '../assets/images/couple/bride.png';
 
-import haldiImg from '../assets/images/events/haldi.png';
-import mehandiImg from '../assets/images/events/mehandi.png';
+import haldiImg from '../assets/images/events/event1.png';
+import mehandiImg from '../assets/images/events/event2.png';
 import receptionImg from '../assets/images/events/reception.png';
 import weddingImg from '../assets/images/events/wedding.png';
 // import sapt1 from '../assets/images/saptapadi/1.png';
@@ -48,8 +48,10 @@ import coupleBg from '../assets/images/props/bg2.png';
 import welcomeBg from '../assets/images/props/welcomebg.png';
 import godImg from '../assets/images/props/god.png';
 import scratchBg from '../assets/images/props/scratchbg.png';
-import section2Bg from '../assets/images/props/green_section.png';
+// import section2Bg from '../assets/images/props/green_section.png';
+import section2Bg from '../assets/images/props/invi_bg.png';
 import venue2Bg from '../assets/images/Venue_bg.png';
+import eventBg from '../assets/images/event_bgr.png';
 
 const config = {
   // Set true to allow the invitation on tablets, desktops, and landscape screens.
@@ -122,7 +124,7 @@ const config = {
     contentGap: '1rem',
     heading: {
       text: 'Invitation',
-      color: '#26080D',
+      color: '#FFF8E7',
       fontFamily: '"Cormorant Garamond", serif',
       fontSize: '2rem',
       fontWeight: 700,
@@ -131,7 +133,7 @@ const config = {
     },
     introParagraph: {
       text: 'With the divine blessings of our Almighty and elders,',
-      color: '#3B0D14',
+      color: '#F8F3E8',
       fontFamily: '"Mukta", sans-serif',
       fontSize: '1rem',
       fontWeight: 400,
@@ -140,7 +142,7 @@ const config = {
     },
     subheading: {
       text: 'Smt. Lalitha & Shri Hanumantha',
-      color: '#26080D',
+      color: '#E8C477',
       fontFamily: '"Cormorant Garamond", serif',
       fontSize: '1.25rem',
       fontWeight: 900,
@@ -149,7 +151,7 @@ const config = {
     },
     paragraph: {
       text: 'we cordially invite you and your family to grace the occasion of our House Warming Ceremony and bless us as we step into our new home.',
-      color: '#3B0D14',
+      color: '#F8F3E8',
       fontFamily: '"Mukta", sans-serif',
       fontSize: '1rem',
       fontWeight: 400,
@@ -161,8 +163,8 @@ const config = {
       heading: 'With Compliments from Kutties:',
       date: 'Dikshan kumar &',
       time: 'Lavin Kumar',
-      headingColor: '#26080D',
-      color: '#3B0D14',
+      headingColor: '#E8C477',
+      color: '#E8C477',
       iconColor: '#26080D',
       headingFontFamily: '"Cormorant Garamond", serif',
       fontFamily: '"Mukta", sans-serif',
@@ -267,7 +269,7 @@ const config = {
       height: '180px',
       borderRadius: '12px',
       borderColor: 'rgba(255, 215, 95, 0.8)',
-      show: true,
+      show: false,
     },
   },
 
@@ -284,13 +286,13 @@ const config = {
     titleSmall: 'Need help?',
     // Color configuration for contact section
     colors: {
-      title: 'rgb(15, 92, 74)',           // ivory - main title color
-      titleSmall: '#F6ECD9',      // goldBright - subtitle color
+      title: '#0f5c4a',           // ivory - main title color
+      titleSmall: 'rgb(15, 92, 74)',      // goldBright - subtitle color
       cardBackground: 'rgba(15,92,74,.07)',  // card background
       cardBorder: 'rgba(15,92,74,.25)',      // card border
       icon: 'rgb(15, 92, 74)',            // goldBright - icon color
-      label: '#F6ECD9',           // ivory - label text color
-      overlay: 'rgba(10,3,5,0.15)', // background overlay opacity
+      label: 'rgb(15, 92, 74)',           // ivory - label text color
+      overlay: 'rgba(10, 3, 5, 0)', // background overlay opacity
     },
     items: [
       //{ source: 'contacts.groomPhone', label: 'Call us', icon: 'phone' },
@@ -346,8 +348,9 @@ const config = {
     },
     // Per-event readable text colors (override defaults for specific events)
     colorsByEvent: {
-      Haldi: { heading: '#26080D', sub: '#241008' }, // dark maroon on yellow/white
-      Mehendi: { heading: '#0F5C4A', sub: '#241008' }, // deep green on green/white
+      //Haldi: { heading: '#ff9d00', sub: '#ffffff' }, // dark maroon on yellow/white
+      'Gruha Pravesha': { heading: '#E8C477', sub: '#ffffff' },
+      'Lunch': { heading: '#E8C477', sub: '#ffffff' },
       Wedding: { heading: '#3B0D14', sub: '#241008' }, // maroon on cream
       Reception: { heading: '#241008', sub: '#8a6b4a' }, // dark ink on white/cream
     },
@@ -365,8 +368,22 @@ const config = {
   // Each event can also set its own `backgroundImage` to override the card's
   // background individually — also optional, leave empty for the default look.
   eventsSection: {
-    sectionBackgroundImage: '', // e.g. '/src/assets/images/events-bg.jpg'
-    sectionBackgroundOverlayOpacity: 0.55, // darkens the bg image so text stays readable
+    backgroundColor: '#fbe6c0',
+    colors: {
+      eyebrow: '#C9A24B',
+      heading: '#0f5c4a',
+      subtitle: '#0f5c4a',
+      eventHeading: '#3B0D14',
+      eventMeta: '#E3B7A0',
+      eventDescription: '#F6ECD9',
+      eventVenue: '#F6ECD9',
+      dressCode: '#C9A24B',
+    },
+    sectionBackgroundImage: eventBg,
+    sectionBackgroundSize: 'cover',
+    sectionBackgroundPosition: 'center',
+    sectionBackgroundRepeat: 'no-repeat',
+    sectionBackgroundOverlayOpacity: 0,
   },
   coupleSection: {
     backgroundImage: coupleBg,
@@ -377,23 +394,23 @@ const config = {
   },
   events: [
     {
-      name: 'Haldi',
+      name: 'Gruha Pravesha',
       icon: '🌼',
-      date: 'November 22, 2026',
-      time: '10:00 AM',
-      venue: 'Aradhya Nilaya, Bangalore',
+      date: 'Nov 22, 2026',
+      time: '5:00 AM',
+      venue: 'Akshaya layout, Bangalore',
       // dressCode: 'Yellow Attire',
-      description: 'A joyful morning of turmeric, laughter, and blessings from both families.',
+      description: 'A sacred beginning filled with divine blessings and prosperity.',
       backgroundImage: haldiImg, // optional per-card override
     },
     {
-      name: 'Mehendi',
+      name: 'Lunch',
       icon: '🌿',
-      date: 'November 22, 2026',
-      time: '05:00 PM',
-      venue: 'Aradhya Nilaya, Bangalore',
+      date: 'Nov 22, 2026',
+      time: '11:00 AM',
+      venue: 'Akshaya layout, Bangalore',
       // dressCode: 'Green & Gold',
-      description: 'Intricate henna, live dhol, and an evening of stories and sweets.',
+      description: 'A festive feast of tradition, togetherness, and love.',
       backgroundImage: mehandiImg,
     },
     // {
@@ -406,26 +423,26 @@ const config = {
     //   description: "A night of dance battles between both families — bring your best moves.",
     //   backgroundImage: '/src/assets/images/3.jpg',
     // },
-    {
-      name: 'Reception',
-      icon: '🥂',
-      date: 'November 22, 2026',
-      time: '7:00 PM',
-      venue: 'Prakruthi Vilasa, Bangalore',
-      // dressCode: 'Formal / Black Tie',
-      description: 'An elegant evening to celebrate the newlyweds with dinner and dance.',
-      backgroundImage: receptionImg,
-    },
-    {
-      name: 'Wedding',
-      icon: '💍',
-      date: 'November 22, 2026',
-      time: '10:00 AM',
-      venue: 'Prakruthi Vilasa, Bangalore',
-      // dressCode: 'Traditional Indian',
-      description: 'Sacred vows exchanged around the holy fire, as our families become one.',
-      backgroundImage: weddingImg,
-    }
+    // {
+    //   name: 'Reception',
+    //   icon: '🥂',
+    //   date: 'November 22, 2026',
+    //   time: '7:00 PM',
+    //   venue: 'Prakruthi Vilasa, Bangalore',
+    //   // dressCode: 'Formal / Black Tie',
+    //   description: 'An elegant evening to celebrate the newlyweds with dinner and dance.',
+    //   backgroundImage: receptionImg,
+    // },
+    // {
+    //   name: 'Wedding',
+    //   icon: '💍',
+    //   date: 'November 22, 2026',
+    //   time: '10:00 AM',
+    //   venue: 'Prakruthi Vilasa, Bangalore',
+    //   // dressCode: 'Traditional Indian',
+    //   description: 'Sacred vows exchanged around the holy fire, as our families become one.',
+    //   backgroundImage: weddingImg,
+    // }
   ],
 
   // ---------------------------------------------------------- TIMELINE
@@ -554,10 +571,31 @@ const config = {
   scratchSurprise: {
     //subtitle: "Our new house becomes a true home only when filled with your blessings and love.",
     subtitle: "From 9:00 AM Onwards",
-    // Optional background image for the scratch card area. Point at a
-    // file inside `src/assets/images/`, e.g. '/src/assets/images/props/scratch-bg.png'
-    // Leave empty string to use the default solid color background.
-    backgroundImage: scratchBg,
+    sectionBackground: {
+      showBackgroundImage: true,
+      backgroundImage: eventBg,
+      backgroundColor: '#F6ECD9',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+    },
+    cardBackground: {
+      showBackgroundImage: true,
+      backgroundImage: scratchBg,
+      backgroundColor: '#F6ECD9',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+    },
+  },
+  countdownSection: {
+    transparentBackground: true,
+    showBackgroundImage: false,
+    backgroundImage: eventBg,
+    backgroundColor: '#F6ECD9',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
   },
 
   // ------------------------------------------------------------ RSVP

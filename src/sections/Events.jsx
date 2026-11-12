@@ -15,19 +15,29 @@ import config from '../config/config.js';
 export default function Events() {
   const { eventsSection } = config;
   const hasSectionBg = Boolean(eventsSection?.sectionBackgroundImage);
+  const textColors = eventsSection?.colors || {};
 
   return (
-    <section id="events" className="relative">
+    <section
+      id="events"
+      className="relative"
+      style={{ backgroundColor: eventsSection?.backgroundColor || config.theme.colors.maroonDeep }}
+    >
       {hasSectionBg && (
         <>
           <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${eventsSection.sectionBackgroundImage})` }}
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url(${eventsSection.sectionBackgroundImage})`,
+              backgroundSize: eventsSection.sectionBackgroundSize || 'cover',
+              backgroundPosition: eventsSection.sectionBackgroundPosition || 'center',
+              backgroundRepeat: eventsSection.sectionBackgroundRepeat || 'no-repeat',
+            }}
             aria-hidden="true"
           />
           <div
             className="absolute inset-0"
-            style={{ background: `rgba(38,8,13,${eventsSection.sectionBackgroundOverlayOpacity ?? 0.55})` }}
+            style={{ background: `rgba(38,8,13,${eventsSection.sectionBackgroundOverlayOpacity ?? 0})` }}
             aria-hidden="true"
           />
         </>
@@ -35,9 +45,9 @@ export default function Events() {
 
       <div className="relative section max-w-[1120px] mx-auto px-5 py-28">
         <Reveal className="text-center">
-          <span className="inline-block tracking-[0.28em] uppercase text-xs text-gold-bright mb-3">Celebrations</span>
-          <h2 className="font-display font-medium text-ivory" style={{ fontSize: 'clamp(34px,6vw,58px)' }}>House Warming Events</h2>
-          <p className="text-rose italic max-w-md mx-auto mt-2 mb-16">A day of prayers, blessings, and new beginnings.</p>
+          <span className="inline-block tracking-[0.28em] uppercase text-xs mb-3" style={{ color: textColors.eyebrow || config.theme.colors.goldBright }}>Celebrations</span>
+          <h2 className="font-display font-medium" style={{ fontSize: 'clamp(34px,6vw,58px)', color: textColors.heading || config.theme.colors.maroonDeep }}>House Warming Events</h2>
+          <p className="italic max-w-md mx-auto mt-2 mb-16" style={{ color: textColors.subtitle || config.theme.colors.rose }}>A day of prayers, blessings, and new beginnings.</p>
         </Reveal>
 
         <div className="flex flex-col gap-10">
@@ -81,18 +91,18 @@ export default function Events() {
                   >
                     <div className="flex items-center gap-4 mb-4">
                       <div className={`w-full ${contentOnLeft ? '' : 'text-right'}`}>
-                          <h4 className="font-display text-2xl md:text-3xl leading-tight" style={{ color: (config.theme.colorsByEvent && config.theme.colorsByEvent[ev.name]?.heading) || config.theme.colors.maroon }}>
+                          <h4 className="font-display text-2xl md:text-3xl leading-tight" style={{ color: config.theme.colorsByEvent?.[ev.name]?.heading || textColors.eventHeading || config.theme.colors.maroon }}>
                             {ev.name}
                           </h4>
-                          <div className="text-xs tracking-wide mt-1" style={{ color: (config.theme.colorsByEvent && config.theme.colorsByEvent[ev.name]?.sub) || config.theme.colors.rose }}>{ev.date} · {ev.time}</div>
+                          <div className="text-xs tracking-wide mt-1" style={{ color: config.theme.colorsByEvent?.[ev.name]?.sub || textColors.eventMeta || config.theme.colors.rose }}>{ev.date} · {ev.time}</div>
                         </div>
                     </div>
 
-                    <p className="text-[15px] leading-relaxed mb-4" style={{ color: config.theme.colors.ivory }}>{ev.description}</p>
+                    <p className="text-[15px] leading-relaxed mb-4" style={{ color: textColors.eventDescription || config.theme.colors.ivory }}>{ev.description}</p>
 
                     <div className="mt-auto">
-                      <p className="text-sm mb-1" style={{ color: config.theme.colors.ivory }}>{ev.venue}</p>
-                      <div className="text-xs uppercase tracking-wider" style={{ color: config.theme.colors.gold }}>{ev.dressCode}</div>
+                      <p className="text-sm mb-1" style={{ color: textColors.eventVenue || config.theme.colors.ivory }}>{ev.venue}</p>
+                      <div className="text-xs uppercase tracking-wider" style={{ color: textColors.dressCode || config.theme.colors.gold }}>{ev.dressCode}</div>
                     </div>
                   </div>
                 </motion.div>
