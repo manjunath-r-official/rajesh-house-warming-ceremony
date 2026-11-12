@@ -7,7 +7,7 @@ import { useEffect, useRef } from 'react';
  * rotation, and a shred/rectangle shape mix, then clears itself.
  * Exposes an imperative `burst()` method via ref, same pattern as AmbientLayer.
  */
-const CONFETTI_COLORS = ['#C9A24B', '#E8C874', '#E3B7A0', '#0F5C4A', '#F6ECD9', '#8a2f3a'];
+const CONFETTI_COLORS = ['#0f5c4a', '#E8C874', '#ffffff', '#0F5C4A', '#F6ECD9'];
 
 export default function ConfettiLayer({ layerRef }) {
   const canvasRef = useRef(null);

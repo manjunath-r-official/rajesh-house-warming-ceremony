@@ -2,7 +2,8 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import config from '../config/config.js';
 
-const PETAL_COLORS = ['#E3B7A0', '#C9A24B', '#E8C874', '#8a2f3a'];
+//const PETAL_COLORS = ['#E3B7A0', '#C9A24B', '#E8C874', '#8a2f3a'];
+const PETAL_COLORS = ['#0f5c4a', '#C9A24B', '#E8C874', '#014501'];
 
 /**
  * Continuous ambient background effect. Two selectable modes, set via

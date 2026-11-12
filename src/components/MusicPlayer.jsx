@@ -3,6 +3,7 @@ import { FiPlay, FiPause } from 'react-icons/fi';
 import config from '../config/config.js';
 
 export default function MusicPlayer({ startSignal = 0, visible = true }) {
+  const colors = config.musicPlayer?.colors || {};
   const audioRef = useRef(null);
   const [playing, setPlaying] = useState(() => {
     if (typeof window === 'undefined') return false;
@@ -107,10 +108,10 @@ export default function MusicPlayer({ startSignal = 0, visible = true }) {
     <div
       className="fixed bottom-6 right-6 z-[60] flex items-center gap-2.5 pl-2.5 pr-4 py-2.5 rounded-full"
       style={{
-        background: 'rgba(38,8,13,.7)',
+        background: colors.containerBackground || 'rgba(1, 52, 1, 0.7)',
         backdropFilter: 'blur(14px)',
-        border: '1px solid rgba(201,162,75,.3)',
-        boxShadow: '0 20px 60px rgba(0,0,0,.45)',
+        border: `1px solid ${colors.containerBorder || 'rgba(201,162,75,.3)'}`,
+        boxShadow: `0 20px 60px ${colors.containerShadow || 'rgba(0,0,0,.45)'}`,
         opacity: visible ? 1 : 0,
         pointerEvents: visible ? 'auto' : 'none',
         transition: 'opacity 0.3s ease',
@@ -119,7 +120,11 @@ export default function MusicPlayer({ startSignal = 0, visible = true }) {
       <button
         onClick={toggle}
         aria-label={playing ? 'Pause music' : 'Play music'}
-        className="w-[38px] h-[38px] rounded-full bg-gold text-maroon-deep flex items-center justify-center"
+        className="w-[38px] h-[38px] rounded-full flex items-center justify-center"
+        style={{
+          backgroundColor: colors.buttonBackground || config.theme.colors.gold,
+          color: colors.buttonIcon || config.theme.colors.maroonDeep,
+        }}
       >
         {playing ? <FiPause /> : <FiPlay />}
       </button>
@@ -127,8 +132,9 @@ export default function MusicPlayer({ startSignal = 0, visible = true }) {
         {[0, 1, 2].map((i) => (
           <span
             key={i}
-            className="w-[3px] bg-gold-bright"
+            className="w-[3px]"
             style={{
+              backgroundColor: colors.equalizerBars || config.theme.colors.goldBright,
               height: playing ? undefined : '4px',
               animation: playing ? `eq 1s ease-in-out ${i * 0.15}s infinite` : 'none',
             }}

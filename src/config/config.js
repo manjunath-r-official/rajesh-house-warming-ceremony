@@ -47,7 +47,7 @@ import bgm from '../assets/audio/bgm.mp3';
 import coupleBg from '../assets/images/props/bg2.png';
 import welcomeBg from '../assets/images/props/welcomebg.png';
 import godImg from '../assets/images/props/god.png';
-import scratchBg from '../assets/images/props/scratchbg.png';
+import scratchBg from '../assets/images/props/scratch_bg.png';
 // import section2Bg from '../assets/images/props/green_section.png';
 import section2Bg from '../assets/images/props/invi_bg.png';
 import venue2Bg from '../assets/images/venue_bg.png';
@@ -324,6 +324,16 @@ const config = {
   backgroundMusic: bgm,
   // Default background music volume (0.0 - 1.0). Change to 0.0 to mute.
   backgroundMusicVolume: 0.5,
+  musicPlayer: {
+    colors: {
+      containerBackground: 'rgba(1, 52, 1, 0.7)',
+      containerBorder: 'rgba(201,162,75,.3)',
+      containerShadow: 'rgba(0,0,0,.45)',
+      buttonBackground: '#e0b862',
+      buttonIcon: 'rgb(1, 52, 1)',
+      equalizerBars: '#E8C874',
+    },
+  },
   soundEffects: {
     templeBells: '',
     doorOpen: '',
@@ -570,7 +580,17 @@ const config = {
   // once revealed; customize freely.
   scratchSurprise: {
     //subtitle: "Our new house becomes a true home only when filled with your blessings and love.",
-    subtitle: "From 9:00 AM Onwards",
+    subtitle: "From 5:00 AM Onwards",
+    textColors: {
+      eyebrow: '#e6a503',
+      heading: '#0f5c4a',
+      scratchInstruction: '#ffffff',
+      cardIcon: '#F6ECD9',
+      cardDay: '#F6ECD9',
+      cardDate: '#F6ECD9',
+      timeIcon: '#F6ECD9',
+      cardTime: '#F6ECD9',
+    },
     sectionBackground: {
       showBackgroundImage: true,
       backgroundImage: eventBg,
@@ -596,6 +616,17 @@ const config = {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
+    colors: {
+      eyebrow: '#e1a203',
+      heading: '#0f5c4a',
+      tileBackground: 'rgb(1, 52, 1)',
+      tileBorder: '#E8C874',
+      digit: '#f7dea1',
+      digitGlow: 'rgb(252, 193, 44)',
+      label: '#E3B7A0',
+      firefly: '#013401',
+      fireflyGlow: 'rgba(1,52,1,0.7)',
+    },
   },
 
   // ------------------------------------------------------------ RSVP
