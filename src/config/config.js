@@ -50,7 +50,7 @@ import godImg from '../assets/images/props/god.png';
 import scratchBg from '../assets/images/props/scratchbg.png';
 // import section2Bg from '../assets/images/props/green_section.png';
 import section2Bg from '../assets/images/props/invi_bg.png';
-import venue2Bg from '../assets/images/Venue_bg.png';
+import venue2Bg from '../assets/images/venue_bg.png';
 import eventBg from '../assets/images/event_bgr.png';
 
 const config = {
