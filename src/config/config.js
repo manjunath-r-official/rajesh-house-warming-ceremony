@@ -7,40 +7,10 @@
 
 // Import assets so Vite includes them in the production build. Keep images
 // inside `src/assets/...` and update these imports when swapping photos.
-import img1 from '../assets/images/couple/1.jpg';
-import img2 from '../assets/images/couple/2.jpg';
-import img3 from '../assets/images/couple/3.jpg';
-import img4 from '../assets/images/couple/4.jpg';
-import img5 from '../assets/images/couple/5.jpg';
-import img6 from '../assets/images/couple/6.jpg';
-import img7 from '../assets/images/couple/7.jpg';
-import img8 from '../assets/images/couple/8.jpg';
-import img9 from '../assets/images/couple/9.jpg';
-import img10 from '../assets/images/couple/10.jpg';
-import img11 from '../assets/images/couple/11.jpg';
-import img12 from '../assets/images/couple/12.jpg';
-import img13 from '../assets/images/couple/13.jpg';
-import img14 from '../assets/images/couple/14.jpg';
-import img15 from '../assets/images/couple/15.jpg';
-import img16 from '../assets/images/couple/16.jpg';
-import img17 from '../assets/images/couple/17.jpg';
-import img18 from '../assets/images/couple/18.jpg';
-//import bridePic from '../assets/images/couple/bride.jpg';
-//import groomPic from '../assets/images/couple/groom.jpg';
-import groomPic from '../assets/images/couple/groom.png';
-import bridePic from '../assets/images/couple/bride.png';
 
 import event1 from '../assets/images/events/event1.webp';
 import event2 from '../assets/images/events/event2.webp';
-import receptionImg from '../assets/images/events/reception.png';
-import weddingImg from '../assets/images/events/wedding.png';
-// import sapt1 from '../assets/images/saptapadi/1.png';
-// import sapt2 from '../assets/images/saptapadi/2.png';
-// import sapt3 from '../assets/images/saptapadi/3.png';
-// import sapt4 from '../assets/images/saptapadi/4.png';
-// import sapt5 from '../assets/images/saptapadi/5.png';
-// import sapt6 from '../assets/images/saptapadi/6.png';
-// import sapt7 from '../assets/images/saptapadi/7.png';
+
 //import peacockPlaceholder from '../assets/images/peacock-placeholder.svg';
 // Background music (replace with your file in src/assets/audio/)
 import bgm from '../assets/audio/bgm.mp3';
@@ -64,27 +34,10 @@ const config = {
     siteTitle: 'House warming ceremony — Invitation',
     description: 'Join us to celebrate our house warming ceremony on November 22, 2026.',
     url: 'https://gruha-pravesha-eta.vercel.app',
-    ogImage: '/cover.jpg',
+    ogImage: '/cover.png',
   },
 
-  // ------------------------------------------------------------- COUPLE
-  bride: {
-    name: 'House warming ceremony',
-    fullName: 'House warming ceremony',
-    parents: 'Sri B.A. Prakash & Smt. Late Latha',
-    photo: bridePic,
-    story:
-      '',
-  },
-  groom: {
-    name: 'House warming ceremony',
-    fullName: 'House warming ceremony',
-    parents: 'Late Sri Rudra Aradhya & Smt. Manjula',
-    photo: groomPic,
-    story:
-      '',
-  },
-  heroPhoto: img1,
+  // ---------------------------------------------------------------- HERO SECTION
   heroSection: {
     intro: 'You are Cordially Invited to our',
     title: 'Gruha Pravesha',
@@ -488,59 +441,59 @@ const config = {
   ],
 
   // ---------------------------------------------------------- TIMELINE
-  timeline: [
-    {
-      year: '2019',
-      title: 'A Chance Meeting',
-      text: 'They met at a college photography club, arguing over the correct exposure for a sunset.',
-      image: img1,
-      video: '',
-    },
-    {
-      year: '2021',
-      title: 'First Trip Together',
-      text: 'A rainy weekend in Munnar sealed what the photography club started.',
-      image: img2,
-      video: '',
-    },
-    {
-      year: '2023',
-      title: 'He Asked The Big Question',
-      text: 'On a rooftop lit with fairy lights, with both families secretly watching from below.',
-      image: img3,
-      video: '',
-    },
-    {
-      year: '2026',
-      title: 'Forever Begins',
-      text: 'Two families, one wedding, and a lifetime of filter coffee ahead.',
-      image: img4,
-      video: '',
-    },
-  ],
+  // timeline: [
+  //   {
+  //     year: '2019',
+  //     title: 'A Chance Meeting',
+  //     text: 'They met at a college photography club, arguing over the correct exposure for a sunset.',
+  //     image: img1,
+  //     video: '',
+  //   },
+  //   {
+  //     year: '2021',
+  //     title: 'First Trip Together',
+  //     text: 'A rainy weekend in Munnar sealed what the photography club started.',
+  //     image: img2,
+  //     video: '',
+  //   },
+  //   {
+  //     year: '2023',
+  //     title: 'He Asked The Big Question',
+  //     text: 'On a rooftop lit with fairy lights, with both families secretly watching from below.',
+  //     image: img3,
+  //     video: '',
+  //   },
+  //   {
+  //     year: '2026',
+  //     title: 'Forever Begins',
+  //     text: 'Two families, one wedding, and a lifetime of filter coffee ahead.',
+  //     image: img4,
+  //     video: '',
+  //   },
+  // ],
 
   // ----------------------------------------------------------- GALLERY
-  gallery: [
-    { src: img1, type: 'image' },
-    { src: img2, type: 'image' },
-    { src: img3, type: 'image' },
-    { src: img4, type: 'image' },
-    { src: img5, type: 'image' },
-    { src: img6, type: 'image' },
-    { src: img7, type: 'image' },
-    { src: img8, type: 'image' },
-    { src: img9, type: 'image' },
-    { src: img10, type: 'image' },
-    { src: img11, type: 'image' },
-    { src: img12, type: 'image' },
-    { src: img13, type: 'image' },
-    { src: img14, type: 'image' },
-    { src: img15, type: 'image' },
-    { src: img16, type: 'image' },
-    { src: img17, type: 'image' },
-    //{ src: img18, type: 'image' },
-    // { src: '/videos/highlight.mp4', type: 'video', poster: '/images/gallery-1.jpg' },
-  ],
+  // gallery: [
+  //   { src: img1, type: 'image' },
+  //   { src: img2, type: 'image' },
+  //   { src: img3, type: 'image' },
+  //   { src: img4, type: 'image' },
+  //   { src: img5, type: 'image' },
+  //   { src: img6, type: 'image' },
+  //   { src: img7, type: 'image' },
+  //   { src: img8, type: 'image' },
+  //   { src: img9, type: 'image' },
+  //   { src: img10, type: 'image' },
+  //   { src: img11, type: 'image' },
+  //   { src: img12, type: 'image' },
+  //   { src: img13, type: 'image' },
+  //   { src: img14, type: 'image' },
+  //   { src: img15, type: 'image' },
+  //   { src: img16, type: 'image' },
+  //   { src: img17, type: 'image' },
+  //   //{ src: img18, type: 'image' },
+  //   // { src: '/videos/highlight.mp4', type: 'video', poster: '/images/gallery-1.jpg' },
+  // ],
 
   // ------------------------------------------------------- SAPTAPADI IMAGES
   // Configure step images here. Each step can define `image` (thumbnail)

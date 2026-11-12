@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import config from '../config/config.js';
 import ganeshaImage from '../assets/images/lordganesha.png';
-//import thoranaImage from '../assets/images/GIF/thorana.gif';
 
 const MARIGOLD_COLORS = ['#f8d266', '#f4a261', '#f9b233', '#e76f51', '#f1c40f'];
 
@@ -124,13 +123,6 @@ export default function WelcomeSequence({ visible, onEnter }) {
       `}</style>
 
       <div ref={petalsRef} className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true" />
-
-      {/* <img
-        src={thoranaImage}
-        alt="Decorative wedding torana"
-        className="pointer-events-none absolute inset-x-0 top-0 w-full max-w-[1200px] object-contain opacity-80"
-        style={{ filter: 'drop-shadow(0 0 24px rgba(201,162,75,0.12))' }}
-      /> */}
 
       <div className="relative z-10 mb-5 max-w-[min(84vw,420px)]">
         <img
