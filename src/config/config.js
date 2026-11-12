@@ -30,8 +30,8 @@ import img18 from '../assets/images/couple/18.jpg';
 import groomPic from '../assets/images/couple/groom.png';
 import bridePic from '../assets/images/couple/bride.png';
 
-import haldiImg from '../assets/images/events/event1.png';
-import mehandiImg from '../assets/images/events/event2.png';
+import event1 from '../assets/images/events/event1.webp';
+import event2 from '../assets/images/events/event2.webp';
 import receptionImg from '../assets/images/events/reception.png';
 import weddingImg from '../assets/images/events/wedding.png';
 // import sapt1 from '../assets/images/saptapadi/1.png';
@@ -52,6 +52,8 @@ import scratchBg from '../assets/images/props/scratch_bg.png';
 import section2Bg from '../assets/images/props/invi_bg.png';
 import venue2Bg from '../assets/images/venue_bg.png';
 import eventBg from '../assets/images/event_bgr.png';
+import joinUsBg from '../assets/images/joinus_bg.webp';
+
 
 const config = {
   // Set true to allow the invitation on tablets, desktops, and landscape screens.
@@ -303,6 +305,36 @@ const config = {
       { source: 'venue.mapsLink', label: 'Directions', icon: 'map' },
     ],
   },
+  joinUs: {
+    enabled: true,
+    backgroundImage: joinUsBg,
+    backgroundColor: '#F6ECD9',
+    backgroundSize: '100% 100%',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    height: '100svh',
+    minHeight: '600px',
+    heading: {
+      text: 'Join Us',
+      color: '#fff8e7',
+      fontFamily: '"Cormorant Garamond", serif',
+      fontSize: 'clamp(2rem, 8vw, 3rem)',
+      fontWeight: 700,
+      lineHeight: 1.1,
+      textAlign: 'center',
+      position: { top: '8%', right: '8%', bottom: 'auto', left: '8%' },
+    },
+    paragraph: {
+      text: 'We look forward to celebrating this special occasion with you.',
+      color: '#fff8e7',
+      fontFamily: '"Mukta", sans-serif',
+      fontSize: '1.1rem',
+      fontWeight: 400,
+      lineHeight: 1.6,
+      textAlign: 'center',
+      position: { top: '16%', right: '10%', bottom: 'auto', left: '10%' },
+    },
+  },
   instagram: 'https://instagram.com/sushmavinay',
 
   // ---------------------------------------------------------- GALLERY
@@ -411,7 +443,7 @@ const config = {
       // venue: 'Akshaya layout, Bangalore',
       // dressCode: 'Yellow Attire',
       description: 'A sacred beginning filled with divine blessings and prosperity.',
-      backgroundImage: haldiImg, // optional per-card override
+      backgroundImage: event1, // optional per-card override
     },
     {
       name: 'Lunch',
@@ -421,7 +453,7 @@ const config = {
       // venue: 'Akshaya layout, Bangalore',
       // dressCode: 'Green & Gold',
       description: 'A festive feast of tradition, togetherness, and love.',
-      backgroundImage: mehandiImg,
+      backgroundImage: event2,
     },
     // {
     //   name: 'Sangeet',

@@ -60,7 +60,6 @@ export default function Events() {
                   style={{
                     borderColor: 'rgba(255,255,255,0.06)',
                     borderWidth: '1px',
-                    boxShadow: '0 18px 45px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02)',
                     backdropFilter: 'blur(6px)',
                     WebkitBackdropFilter: 'blur(6px)',
                     perspective: 1400,
@@ -138,8 +137,8 @@ export default function Events() {
 
             /* Desktop-only (leave mobile layout spacing untouched) */
             @media (min-width: 1024px) {
-              .event-card { transition: transform 0.6s cubic-bezier(.2,.8,.2,1), box-shadow 0.6s; }
-              .event-card:hover { transform: rotateX(4deg) rotateY(-8deg) scale(1.03); box-shadow: 0 28px 70px rgba(2,6,23,0.75); }
+              .event-card { transition: transform 0.6s cubic-bezier(.2,.8,.2,1); }
+              .event-card:hover { transform: rotateX(4deg) rotateY(-8deg) scale(1.03); }
 
                 /* 3D layered edge effect */
                 .event-card::before,
