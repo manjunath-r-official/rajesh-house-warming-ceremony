@@ -757,7 +757,7 @@ const config = {
       textShadow: 'none',
       top: 'auto',
       right: '0',
-      bottom: '6rem',
+      bottom: '7rem',
       left: '0',
       zIndex: 30,
     },
