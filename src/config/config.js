@@ -80,7 +80,7 @@ const config = {
     backgroundColor: '#F6ECD9',
     height: '100svh',
     minHeight: '600px',
-    contentPosition: { top: '25%', right: '8%', bottom: 'auto', left: '8%' },
+    contentPosition: { top: '20%', right: '8%', bottom: 'auto', left: '8%' },
     contentGap: '1rem',
     heading: {
       text: 'Invitation',
@@ -102,6 +102,15 @@ const config = {
     },
     subheading: {
       text: 'Smt. Lalitha & Shri Hanumantha',
+      color: '#E8C477',
+      fontFamily: '"Cormorant Garamond", serif',
+      fontSize: '1.25rem',
+      fontWeight: 900,
+      lineHeight: 1.2,
+      textAlign: 'center',
+    },
+    subheading2: {
+      text: 'Smt. Mahalakshmi & Shri Rajesh',
       color: '#E8C477',
       fontFamily: '"Cormorant Garamond", serif',
       fontSize: '1.25rem',

@@ -9,6 +9,7 @@ export default function Section2() {
   const heading = section.heading || {};
   const introParagraph = section.introParagraph || {};
   const subheading = section.subheading || {};
+  const subheading2 = section.subheading2 || {};
   const paragraph = section.paragraph || {};
   const dateTime = section.dateTime || {};
   const contentPosition = section.contentPosition || {};
@@ -82,7 +83,8 @@ export default function Section2() {
               textAlign: subheading.textAlign || 'center',
             }}
           >
-            {subheading.text}
+            {subheading.text}<br></br>
+            {subheading2.text}
           </h3>
         )}
         <p
