@@ -45,7 +45,7 @@ Vite-managed images belong under `src/assets/images/` and are imported from the 
 
 The entrance decoration is optional. Set `entranceDoor.decoration.image` to an imported transparent image or a file in `public/`. Set `entranceDoor.decoration.enabled` to `false` to hide the overlay.
 
-The sharing image is `public/cover.png`. Keep the absolute `og:image` and `twitter:image` URLs in `index.html` pointed at the deployed site's image URL. Social platforms may cache old previews; refresh their scraper after changing the image.
+The sharing image is `public/cover-og.jpg`. Keep the absolute `og:image` and `twitter:image` URLs in `index.html` pointed at the deployed site's image URL. Social platforms may cache old previews; refresh their scraper after changing the image.
 
 The background music asset and volume are configured in `src/config/config.js`. The player colors are under `musicPlayer.colors`.
 
@@ -62,7 +62,7 @@ The production output is written to `dist/`.
 
 Deploy to Vercel or Netlify using the repository's existing configuration. For another static host, run `npm run build` and upload the contents of `dist/` to the site's document root.
 
-After deploying, confirm that the page and `/cover.png` are publicly reachable over HTTPS before sharing the invitation.
+After deploying, confirm that the page and `/cover-og.jpg` are publicly reachable over HTTPS before sharing the invitation.
 
 ## Project Structure
 

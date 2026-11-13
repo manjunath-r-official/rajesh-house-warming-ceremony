@@ -39,7 +39,7 @@ const config = {
     siteTitle: 'House warming ceremony — Invitation',
     description: 'Join us to celebrate our house warming ceremony on November 22, 2026.',
     url: 'https://gruha-pravesha-eta.vercel.app',
-    ogImage: '/cover.png',
+    ogImage: '/cover-og.jpg',
   },
 
   // ---------------------------------------------------------------- HERO SECTION
