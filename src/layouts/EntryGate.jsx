@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
 import RoyalDoor3D from '../components/RoyalDoor3D.jsx';
 import WelcomeSequence from '../components/WelcomeSequence.jsx';
 import config from '../config/config.js';
@@ -12,6 +11,7 @@ import config from '../config/config.js';
  */
 export default function EntryGate({ onEnter, onMusicStart, petalBurst }) {
   const [stage, setStage] = useState('door'); // 'door' | 'welcome' | 'done'
+  const [doorOpening, setDoorOpening] = useState(false);
 
   function handleDoorOpened() {
     petalBurst && petalBurst(40);
@@ -27,43 +27,43 @@ export default function EntryGate({ onEnter, onMusicStart, petalBurst }) {
 
   return (
     <>
-      <AnimatePresence>
-        {stage === 'door' && (
-          <motion.div
-            key="gate"
+      {stage === 'door' && (
+          <div
             className="fixed inset-0 z-[100] w-full max-w-full overflow-hidden overscroll-none touch-none"
             style={{
-              background: 'radial-gradient(ellipse at center, #1a0509 0%, #0d0304 70%)',
+              background: config.entranceDoor?.background || 'radial-gradient(ellipse at center, #1a0509 0%, #0d0304 70%)',
               height: '100dvh',
               padding: 0,
               margin: 0,
             }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6 }}
           >
-            <div
-              className="absolute inset-0 flex flex-col items-center justify-center gap-3"
-              style={{
-                height: '100dvh',
-                padding: 0,
-                margin: 0,
-              }}
-            >
-              {/* <div className="text-center shrink-0 px-2 pt-2">
-                <h1 className="font-cinzel text-xl sm:text-2xl md:text-4xl text-ivory">
-                  {config.bride.name} &amp; {config.groom.name}
-                </h1>
-              </div> */}
-              <div className="w-full flex-1 min-h-0" style={{ maxWidth: '100vw' }}>
-                <RoyalDoor3D onOpened={handleDoorOpened} />
-              </div>
-              <p className="shrink-0 text-gold-bright text-xs tracking-[0.14em] uppercase opacity-80 animate-pulse pb-2">
-                Tap the door to enter
+            <RoyalDoor3D onOpening={() => setDoorOpening(true)} onOpened={handleDoorOpened} />
+            {!doorOpening && config.entranceDoor?.prompt?.enabled !== false && (
+              <p
+                className="fixed animate-pulse pointer-events-none"
+                style={{
+                  top: config.entranceDoor?.prompt?.top ?? 'auto',
+                  right: config.entranceDoor?.prompt?.right ?? '0',
+                  bottom: config.entranceDoor?.prompt?.bottom ?? '0.5rem',
+                  left: config.entranceDoor?.prompt?.left ?? '0',
+                  zIndex: config.entranceDoor?.prompt?.zIndex ?? 30,
+                  margin: 0,
+                  color: config.entranceDoor?.prompt?.color || '#E8C874',
+                  fontFamily: config.entranceDoor?.prompt?.fontFamily || config.theme.fonts.body,
+                  fontSize: config.entranceDoor?.prompt?.fontSize || '0.75rem',
+                  fontWeight: config.entranceDoor?.prompt?.fontWeight ?? 400,
+                  letterSpacing: config.entranceDoor?.prompt?.letterSpacing || '0.14em',
+                  textTransform: config.entranceDoor?.prompt?.textTransform || 'uppercase',
+                  textAlign: config.entranceDoor?.prompt?.textAlign || 'center',
+                  opacity: config.entranceDoor?.prompt?.opacity ?? 0.8,
+                  textShadow: config.entranceDoor?.prompt?.textShadow || 'none',
+                }}
+              >
+                {config.entranceDoor?.prompt?.text || 'Tap the door to enter'}
               </p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            )}
+          </div>
+      )}
 
       <WelcomeSequence visible={stage === 'welcome'} onEnter={handleWelcomeEnter} />
     </>

@@ -9,6 +9,14 @@ export default function WelcomeSequence({ visible, onEnter }) {
   const petalSet = config.welcome?.flowerEmojis ?? ['🌼', '🌸', '🌼', '🌻', '🌷'];
 
   useEffect(() => {
+    [config.welcome?.backgroundImage, ganeshaImage].filter(Boolean).forEach((src) => {
+      const image = new Image();
+      image.fetchPriority = 'high';
+      image.src = src;
+    });
+  }, []);
+
+  useEffect(() => {
     if (!visible || !petalsRef.current) return undefined;
 
     const container = petalsRef.current;

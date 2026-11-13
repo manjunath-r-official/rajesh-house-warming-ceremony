@@ -10,6 +10,11 @@
 
 import event1 from '../assets/images/events/event1.webp';
 import event2 from '../assets/images/events/event2.webp';
+// import doorLeft from '../assets/images/door/door-left.jpg';
+import doorLeft from '../assets/images/door/door-left.webp';
+// import doorRight from '../assets/images/door/door-right.jpg';
+import doorRight from '../assets/images/door/door-right.webp';
+import doorFrame from '../assets/images/door/door_frame.png';
 
 //import peacockPlaceholder from '../assets/images/peacock-placeholder.svg';
 // Background music (replace with your file in src/assets/audio/)
@@ -667,9 +672,104 @@ const config = {
     floatingEnabled: false,
   },
 
+  // ---------------------------------------------------------- ENTRANCE DOOR
+  entranceDoor: {
+    background: 'radial-gradient(ellipse at center, #1a0509 0%, #0d0304 70%)',
+    perspective: '2200px',
+    doorImages: { left: doorLeft, right: doorRight },
+    scenePosition: {
+      top: '0',
+      right: '0',
+      bottom: '0',
+      left: '0',
+      width: 'auto',
+      height: 'auto',
+      transform: 'none',
+    },
+    doorImageFit: 'cover',
+    doorImagePosition: 'center',
+    doorShadows: {
+      left: 'inset -20px 0 40px rgba(0,0,0,.4), 0 20px 60px rgba(0,0,0,.5)',
+      right: 'inset 20px 0 40px rgba(0,0,0,.4), 0 20px 60px rgba(0,0,0,.5)',
+    },
+    leaves: {
+      left: {
+        top: '0',
+        right: '50%',
+        bottom: 'auto',
+        left: '30px',
+        width: 'auto',
+        height: '100%',
+        transformOrigin: 'left center',
+      },
+      right: {
+        top: '0',
+        right: '30px',
+        bottom: 'auto',
+        left: '50%',
+        width: 'auto',
+        height: '100%',
+        transformOrigin: 'right center',
+      },
+    },
+    decoration: {
+      enabled: true,
+      image: doorFrame, // Set an imported image or a public path such as '/entrance-decoration.png'.
+      alt: '',
+      top: '0',
+      right: '0',
+      bottom: '0',
+      left: '0',
+      objectFit: 'fill',
+      objectPosition: 'center',
+      opacity: 1,
+      zIndex: 20,
+    },
+    glow: {
+      background: 'radial-gradient(ellipse 60% 70% at 50% 45%, rgba(232,200,116,0.9), rgba(232,200,116,0) 60%)',
+      zIndex: 1,
+    },
+    seam: {
+      enabled: true,
+      width: '3px',
+      background: 'linear-gradient(180deg, transparent, rgba(0,0,0,.6) 10%, rgba(0,0,0,.6) 90%, transparent)',
+      zIndex: 2,
+    },
+    prompt: {
+      enabled: true,
+      text: 'Tap the door to enter',
+      color: '#fdfdfc',
+      fontFamily: '"Mukta", sans-serif',
+      fontSize: '0.75rem',
+      fontWeight: 500,
+      letterSpacing: '0.14em',
+      textTransform: 'uppercase',
+      opacity: 0.8,
+      textShadow: 'none',
+      top: 'auto',
+      right: '0',
+      bottom: '6rem',
+      left: '0',
+      zIndex: 30,
+    },
+  },
+
   // ------------------------------------------------------------ ANIMATION
   animation: {
-    doorOpenDurationS: 1.8,
+    doorOpenDurationS: 2,
+    doorOpenDelayS: 0.15,
+    doorLeftOpenAngle: -108,
+    doorRightOpenAngle: 108,
+    doorEase: 'power3.inOut',
+    doorBloomDurationS: 0.55,
+    doorBloomFadeDurationS: 0.45,
+    // doorBloomFadeEase: 'power2.out',
+    doorDecorationFadeDurationS: 0.3,
+    doorDecorationFadeEase: 'power2.out',
+    doorSceneExitDelayS: 0,
+    doorSceneExitScale: 0.3,
+    doorSceneExitDurationS: 0,
+    doorSceneExitEase: 'power1.in',
     lenisSmoothness: 1.1, // higher = smoother/slower
     reduceMotionRespected: true,
   },
